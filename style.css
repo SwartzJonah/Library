@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}
+
+.topBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
+.title{
+    font-size: 36px;
+    font-weight: bold;
+    padding-left: 2vw;
+    padding-top: 3vh;
+}
+
+#addBookBtn{
+    text-align: center;
+    height: 50px;
+    width: 120px;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 3vh;
+    margin-right: 2vw;
+}
+
+.library{
+    background-color: red;
+    display: grid;
+}
+
