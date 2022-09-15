@@ -14,12 +14,15 @@
             <div class="title"> My Library</div>
             <button id="addBookBtn"> New Book</button>
         </div>
+        <div id="library">
+            
+        </div>
         <div id = "bookPopup">
-            <form id="bookForm" action="/javascript.js"></form>
+            <form id="bookForm" >
                 <div id="inputOne">
                     <span><input type="text" id='title' placeholder="Title"></span>
                     <span><input type="text" id='author' placeholder="Author"></span>
-                    <span><input type="text" id='pages' placeholder="Pages"></span>
+                    <span><input type="number" id='pages' placeholder="Pages"></span>
                 </div>
                 <div id="inputTwo">
                     <span><label>Read:</label><input type="checkbox" id='read' value='no'</span>
@@ -27,9 +30,7 @@
                 <button type="submit" form="bookForm" id="submitBtn">Add Book</button>
             </form>
         </div>
-        <div id="library">
-            
-        </div>
+        
     </div>
     
 </body>

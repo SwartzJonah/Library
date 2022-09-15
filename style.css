@@ -40,12 +40,15 @@ body{
 }
 
 #library{
-    background-color: red;
+    
     display: grid;
 }
 
 #bookPopup {
     display: none;
-    position: fixed;
-    z-index: 1;
+    left: 50%;
+    top: 50%;
+    margin-left: -25%;
+    position: absolute;
+    margin-top: -25%;
 }
