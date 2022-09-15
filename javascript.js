@@ -1,22 +1,30 @@
 //Starter State
-const library = document.querySelector('.library');
+const library = document.querySelector('#library');
 const addBookBtn = document.querySelector('#addBookBtn');
+const submitBtn = document.querySelector('#submitBtn');
+const bookPopup = document.querySelector('#bookPopup');
+// const bookForm = document.querySelector('#bookForm')
 let myLibrary = [];
 let bookIndex = 0;
+let bookToAdd;
 
-
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.index = bookIndex;
+class Book{
+    constructor (title, author, pages, read) {
+        this.title = bookForm.title.value;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
+addBookBtn.addEventListener('click', () => bookPopup.style.display ='block');
+submitBtn.addEventListener('click', addBookToLibrary);
 
+
+// Functions
 function addBookToLibrary(book) {
-    myLibrary.push(book);
-    bookIndex++;
+    bookPopup.style.display ='block';
+    
 }
 
 function displayBooks() {

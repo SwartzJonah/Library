@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="javascript.js" defer></script>
-    <title>Libary</title>
+    <title>Library</title>
 </head>
 <body>
     <div class = "container">
@@ -14,16 +14,23 @@
             <div class="title"> My Library</div>
             <button id="addBookBtn"> New Book</button>
         </div>
-        <div class="library">
+        <div id = "bookPopup">
+            <form id="bookForm" action="/javascript.js"></form>
+                <div id="inputOne">
+                    <span><input type="text" id='title' placeholder="Title"></span>
+                    <span><input type="text" id='author' placeholder="Author"></span>
+                    <span><input type="text" id='pages' placeholder="Pages"></span>
+                </div>
+                <div id="inputTwo">
+                    <span><label>Read:</label><input type="checkbox" id='read' value='no'</span>
+                </div>
+                <button type="submit" form="bookForm" id="submitBtn">Add Book</button>
+            </form>
+        </div>
+        <div id="library">
             
         </div>
-        <div class = "bookPupup">
-            <div id ="bookForm">
-                <form class="formContainer">
-                    <
-                </form>
-            </div>
-        </div>
     </div>
+    
 </body>
 </html>
