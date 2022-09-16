@@ -17,8 +17,8 @@ class Book{
     constructor (title, author, pages, read) {
         this.title = title;
         this.author = author;
-        this.pages = pages;
-        this.read = read;
+        this.pages = pages + ' pages';
+        this.read = 'Read: ' + read;
         this.index = myLibrary.length;
     }
 }
@@ -32,8 +32,17 @@ function addBookToLibrary() {
     event.preventDefault();
     bookPopup.style.display ='none';
     newTitle = bookForm.title.value;
+    if (newTitle === '') {
+        newTitle = 'N/A';
+    }
     newAuthor = bookForm.author.value;
+    if (newAuthor === '') {
+        newAuthor = 'N/A';
+    }
     newPages = bookForm.pages.value;
+    if (newPages === '') {
+        newPages = 'N/A';
+    }
     newRead = bookForm.read.checked;
     bookToAdd = new Book(newTitle, newAuthor, newPages, newRead);
     myLibrary.push(bookToAdd);
@@ -52,10 +61,15 @@ function displayBooks() {
         const displayRead = document.createElement('div');
         
         displayBook.setAttribute('spot', myLibrary.indexOf[i]);
+        displayBook.classList.add('tempbook');
         displayTitle.textContent = myLibrary[i].title;
+        displayTitle.classList.add('temptitle');
         displayAuthor.textContent = myLibrary[i].author;
+        displayAuthor.classList.add('tempauthor');
         displayPages.textContent = myLibrary[i].pages;
+        displayPages.classList.add('temppages');
         displayRead.textContent = myLibrary[i].read;
+        displayRead.classList.add('tempread');
         const displayIndex = myLibrary[i].index;
         console.log(myLibrary[i].index)
         console.log(displayIndex)
@@ -72,21 +86,23 @@ function displayBooks() {
             myLibrary.splice(displayIndex, 1);
             displayBooks();
         })
-        removeBtn.textContent= "Remove Book";
-        displayBook.appendChild(removeBtn);
+        removeBtn.textContent= "Remove";
+        removeBtn.classList.add('removeButton');
+        
 
         const readButton = document.createElement('button');
+        readButton.classList.add('readButton');
         readButton.addEventListener('click', () => {
-            if (myLibrary[displayIndex].read === true) {
-                myLibrary[displayIndex].read = false;
+            if (myLibrary[displayIndex].read === 'Read: ' + true) {
+                myLibrary[displayIndex].read = 'Read: ' + false;
             } else {
-                myLibrary[displayIndex].read = true;
+                myLibrary[displayIndex].read = 'Read: ' + true;
             }
             displayBooks();
         })
         readButton.textContent= "Read";
         displayBook.appendChild(readButton);
-
+        displayBook.appendChild(removeBtn);
         library.appendChild(displayBook);
     }
 }

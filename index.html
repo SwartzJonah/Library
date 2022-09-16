@@ -17,21 +17,24 @@
         <div id="library">
             
         </div>
+    </div>
         <div id = "bookPopup">
-            <form id="bookForm" >
+            <form id="bookForm" action="" method="get">
                 <div id="inputOne">
-                    <span><input type="text" id='title' placeholder="Title"></span>
-                    <span><input type="text" id='author' placeholder="Author"></span>
-                    <span><input type="number" id='pages' placeholder="Pages"></span>
+                    <input type="text" id='title' name='title' placeholder="Title" required>
+                    <input type="text" id='author' placeholder="Author" required>
+                    <input type="number" id='pages' placeholder="Pages" required>
                 </div>
                 <div id="inputTwo">
-                    <span><label>Read:</label><input type="checkbox" id='read' value='no'</span>
+                    <label>Read: &nbsp</label><input type="checkbox" id='read' value='no'>
                 </div>
                 <button type="submit" form="bookForm" id="submitBtn">Add Book</button>
             </form>
         </div>
         
-    </div>
     
+    <footer>
+        <p> Built By <a href="https://github.com/SwartzJonah">Jonah Swartz</a></p>
+     </footer>
 </body>
 </html>
