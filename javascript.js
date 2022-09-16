@@ -68,13 +68,24 @@ function displayBooks() {
 
         const removeBtn = document.createElement('button');
         console.log(myLibrary[i]);
-        // removeBtn.addEventListener('click', removeBook(myLibrary[i]));
         removeBtn.addEventListener('click', () => {
             myLibrary.splice(displayIndex, 1);
             displayBooks();
         })
         removeBtn.textContent= "Remove Book";
         displayBook.appendChild(removeBtn);
+
+        const readButton = document.createElement('button');
+        readButton.addEventListener('click', () => {
+            if (myLibrary[displayIndex].read === true) {
+                myLibrary[displayIndex].read = false;
+            } else {
+                myLibrary[displayIndex].read = true;
+            }
+            displayBooks();
+        })
+        readButton.textContent= "Read";
+        displayBook.appendChild(readButton);
 
         library.appendChild(displayBook);
     }
@@ -91,9 +102,3 @@ function deleteBooks(){
     })
 }
 
-// function removeBook(book){
-//     console.log("aloha")
-//     deleteBooks();
-//     myLibrary.splice(myLibrary.indexOf(book), 1);
-//     displayBooks();
-// }
