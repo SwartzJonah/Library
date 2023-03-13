@@ -24,8 +24,12 @@ class Book{
 }
 
 addBookBtn.addEventListener('click', () => bookPopup.style.display ='table');
-submitBtn.addEventListener('click', addBookToLibrary);
+//submitBtn.addEventListener('click', addBookToLibrary);
 
+bookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    addBookToLibrary();
+});
 
 // Functions
 function addBookToLibrary() {
